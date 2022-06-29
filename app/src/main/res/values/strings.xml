@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Memory Game</string>
+    <string name="memory_game">MEMORY GAME</string>
+    <string name="dificil">Díficil</string>
+    <string name="facil">Fácil</string>
+    <string name="medio">Medio</string>
+    <string name="selecciona_una_dificultad">Selecciona una dificultad</string>
+    <string name="todo">todo</string>
+    <string name="tiempo">60s</string>
+    <string name="counter">0</string>
+    <string name="exit">Salir</string>
+    <string name="restart">Reiniciar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="puntos">Puntos</string>
+    <string name="texto_informacion">Texto información</string>
+    <string name="game_over">GAME OVER</string>
+</resources>
