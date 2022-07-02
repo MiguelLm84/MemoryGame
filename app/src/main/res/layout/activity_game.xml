@@ -4,1140 +4,1217 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/_59134"
     tools:context=".ui.activity.GameActivity">
 
 
-    <ImageView
-        android:id="@+id/iv_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView_counters"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardView_counters"
-        app:srcCompat="@drawable/ic_back" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView_counters"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardBackgroundColor="@color/light_gray"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iv_back"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/tv_timer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="4dp"
-                android:fontFamily="sans-serif-black"
-                android:text="@string/tiempo"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/iv_timer"
-                android:layout_width="19dp"
-                android:layout_height="21dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/ic_timer"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tv_timer"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/iv_counter"
-                android:layout_width="19dp"
-                android:layout_height="21dp"
-                android:layout_marginEnd="4dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/countdown"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_timer"
-                app:layout_constraintEnd_toStartOf="@+id/tv_counter"
-                app:layout_constraintTop_toTopOf="@+id/iv_timer" />
-
-            <TextView
-                android:id="@+id/tv_counter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:fontFamily="sans-serif-black"
-                android:text="@string/counter"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_timer"
-                app:layout_constraintEnd_toStartOf="@+id/iv_timer"
-                app:layout_constraintTop_toTopOf="@+id/tv_timer" />
-
-            <TextView
-                android:id="@+id/tv_pairs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:fontFamily="sans-serif-black"
-                android:text="@string/counter"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_counter"
-                app:layout_constraintEnd_toStartOf="@+id/iv_counter"
-                app:layout_constraintTop_toTopOf="@+id/tv_counter" />
-
-            <ImageView
-                android:id="@+id/iv_pairs"
-                android:layout_width="19dp"
-                android:layout_height="21dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="4dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/card_game"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_counter"
-                app:layout_constraintEnd_toStartOf="@+id/tv_pairs"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/iv_counter" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
-        android:background="@color/black"
-        android:orientation="horizontal"
-        android:padding="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView_counters">
-
-        <TableLayout
-            android:id="@+id/tableLayoutLow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/light_gray"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_low_1"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_2"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_3"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_4"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_low_5"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_6"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_7"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_8"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_low_9"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_10"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_11"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_12"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_low_13"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_14"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_15"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_low_16"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
-
-            </TableRow>
-
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/tableLayoutMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/light_gray"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_medium_1"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_2"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_3"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_4"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,TooManyViews" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_medium_5"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,TooManyViews" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_6"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_7"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,TooManyViews" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_8"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,TooManyViews" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_medium_9"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_10"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_11"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_12"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_medium_13"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_14"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_15"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_16"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_medium_17"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_18"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_19"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_20"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_medium_21"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_22"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_23"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_medium_24"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-            </TableRow>
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/tableLayoutHigh"
-            android:layout_width="400dp"
-            android:layout_height="490dp"
-            android:background="@color/light_gray"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView">
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_high_1"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_2"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_3"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerCrop"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_4"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_5"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_high_6"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_7"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,TooManyViews" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_8"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_9"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_10"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_high_11"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_12"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_13"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck,TooManyViews" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_14"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_15"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_high_16"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_17"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_18"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_19"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_20"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_high_21"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_22"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_23"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_24"
-                    style=" @null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_25"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/iv_high_26"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_27"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_28"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_29"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-
-                <ImageButton
-                    android:id="@+id/iv_high_30"
-                    style="@null"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:padding="3dp"
-                    android:scaleType="centerInside"
-                    tools:ignore="ImageContrastCheck" />
-            </TableRow>
-
-        </TableLayout>
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottieAnimationView"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:scaleType="centerCrop"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/data5"
-            tools:ignore="ImageContrastCheck" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="24dp"
-        android:orientation="horizontal"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView_restart"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@color/light_gray"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="4dp"
-            tools:ignore="TouchTargetSizeCheck">
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintVertical_bias="0.0">
 
-            <TextView
-                android:id="@+id/tv_restart"
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_restart"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="6dp"
-                android:fontFamily="sans-serif-black"
-                android:gravity="center"
-                android:text="@string/restart"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:drawableStartCompat="@drawable/ic_restart" />
-        </androidx.cardview.widget.CardView>
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/light_gray"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp"
+                tools:ignore="TouchTargetSizeCheck">
+
+                <TextView
+                    android:id="@+id/tv_restart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:text="@string/restart"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_exit"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/light_gray"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp"
+                tools:ignore="TouchTargetSizeCheck">
+
+                <TextView
+                    android:id="@+id/tv_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:text="@string/exit"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView_exit"
-            android:layout_width="110dp"
+            android:id="@+id/cardView_counters"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             app:cardBackgroundColor="@color/light_gray"
             app:cardCornerRadius="5dp"
-            app:cardElevation="4dp"
-            tools:ignore="TouchTargetSizeCheck">
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tv_exit"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_timer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="7dp"
+                    android:text="@string/cero"
+                    android:textColor="@color/black"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_timer"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_timer"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_timer"
+                    app:layout_constraintTop_toTopOf="@+id/tv_timer" />
+
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/tiempo"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_timer"
+                    android:layout_width="19dp"
+                    android:layout_height="21dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_timer"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_timer"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_counter"
+                    android:layout_width="19dp"
+                    android:layout_height="21dp"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/countdown"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_timer"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_counter"
+                    app:layout_constraintTop_toTopOf="@+id/iv_timer" />
+
+                <TextView
+                    android:id="@+id/tv_counter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/counter"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_timer"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_timer"
+                    app:layout_constraintTop_toTopOf="@+id/tv_timer" />
+
+                <TextView
+                    android:id="@+id/tv_pairs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/counter"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_counter"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_counter"
+                    app:layout_constraintTop_toTopOf="@+id/tv_counter" />
+
+                <ImageView
+                    android:id="@+id/iv_pairs"
+                    android:layout_width="19dp"
+                    android:layout_height="21dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/card_game"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_counter"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_pairs"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_counter" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/black"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_counters"
+            app:layout_constraintVertical_bias="0.17000002">
+
+            <TableLayout
+                android:id="@+id/tableLayoutLow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="6dp"
-                android:fontFamily="sans-serif-black"
+                android:background="@color/light_gray"
                 android:gravity="center"
-                android:text="@string/exit"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:drawableStartCompat="@drawable/ic_baseline_exit_to_app_24" />
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/iv_low_1"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_2"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_3"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_4"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/iv_low_5"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_6"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_7"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_8"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/iv_low_9"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_10"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_11"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_12"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/iv_low_13"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_14"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_15"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_low_16"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateClickableBoundsCheck" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/tableLayoutMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_1"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_2"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_3"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_4"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,TooManyViews" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_5"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,TooManyViews" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_6"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_7"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,TooManyViews" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_8"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,TooManyViews" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_9"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_10"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_11"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_12"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_13"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_14"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_15"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_16"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_17"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_18"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_19"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_20"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_21"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_22"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_23"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_medium_24"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/tableLayoutHigh"
+                android:layout_width="400dp"
+                android:layout_height="490dp"
+                android:background="@color/light_gray"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="3dp">
+
+                    <ImageButton
+                        android:id="@+id/iv_high_1"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_2"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_3"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerCrop"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_4"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_5"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="3dp">
+
+                    <ImageButton
+                        android:id="@+id/iv_high_6"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_7"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,TooManyViews" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_8"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,TooManyViews" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_9"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_10"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="3dp">
+
+                    <ImageButton
+                        android:id="@+id/iv_high_11"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_12"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_13"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck,TooManyViews" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_14"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_15"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="3dp">
+
+                    <ImageButton
+                        android:id="@+id/iv_high_16"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_17"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_18"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_19"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_20"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="3dp">
+
+                    <ImageButton
+                        android:id="@+id/iv_high_21"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_22"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_23"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_24"
+                        style=" @null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_25"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="3dp">
+
+                    <ImageButton
+                        android:id="@+id/iv_high_26"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_27"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_28"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_29"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <ImageButton
+                        android:id="@+id/iv_high_30"
+                        style="@null"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        tools:ignore="ImageContrastCheck" />
+                </TableRow>
+
+            </TableLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
