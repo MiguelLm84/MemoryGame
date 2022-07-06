@@ -1,7 +1,7 @@
 package com.miguel_lm.memorygame.ui.activity
 
-import android.annotation.SuppressLint
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.*
@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.miguel_lm.memorygame.R
 import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.EXTRA_SELECTION
 import com.miguel_lm.memorygame.databinding.ActivityGameBinding
-import com.miguel_lm.memorygame.model.dialog.DialogGameOver
 import com.miguel_lm.memorygame.model.provider.ChargeBoard
 import com.miguel_lm.memorygame.model.provider.ImageList
 import com.miguel_lm.memorygame.model.provider.Levels
@@ -62,28 +61,13 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
-    //Método para iniciar la cuenta atrás del tiempo de juego.
-    @SuppressLint("SetTextI18n")
-    private fun initCountDown() {
-        object : CountDownTimer(60000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                val secondsRemaining = millisUntilFinished / 1000
-                binding.tvTimer.text = secondsRemaining.toString() + "s"
-            }
+    //Method to start Media Player
+    private fun mediaPlayerInit() {
 
-            override fun onFinish() {
-                binding.tvTimer.text = "0s"
-                blocking = true
-                showDialogGame(score)
-            }
-        }.start()
-    }
-
-    private fun showDialogGame(score: Int) {
-
-        if (!this.isFinishing) {
-            DialogGameOver().showDialogGameOver(score, this)
-        }
+        mediaPlayer = MediaPlayer.create(this, MUSIC_ZEN)
+        mediaPlayer?.start()
+        mediaPlayer?.isLooping = true
+        mediaPlayerBtn = MediaPlayer.create(this, SOUND_BUTTON)
     }
 
     private fun initGame(extra: Bundle) {
@@ -96,6 +80,8 @@ class GameActivity : AppCompatActivity() {
     private fun buttonsEvents() {
 
         binding.cardViewRestart.setOnClickListener {
+            mediaPlayerBtn?.start()
+            mediaPlayer?.stop()
             finish()
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)

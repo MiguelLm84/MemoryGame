@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_cargando"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -61,8 +61,28 @@
         android:paddingEnd="0dp"
         android:text="@string/cargando"
         android:textAlignment="center"
+        android:textColor="#006C5F"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/tv_iniciando"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="0dp"
+        android:text="@string/iniciando"
+        android:textAlignment="center"
+        android:textColor="#006C5F"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/progressBar"
         app:layout_constraintStart_toStartOf="@+id/progressBar"
         app:layout_constraintTop_toBottomOf="@+id/progressBar" />

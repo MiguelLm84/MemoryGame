@@ -2,15 +2,21 @@ package com.miguel_lm.memorygame.ui.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.transition.Explode
+import android.view.View
 import android.view.WindowManager
+import android.view.animation.AnimationUtils
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.miguel_lm.memorygame.R
 import com.miguel_lm.memorygame.databinding.ActivitySplashBinding
+import com.miguel_lm.memorygame.model.singleton.MediaPlayerMusic
+import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.SOUND_SPLASH
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {

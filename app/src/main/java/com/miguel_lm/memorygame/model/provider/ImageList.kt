@@ -12,7 +12,10 @@ import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.MEW
 import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.MEWTWO
 import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.PIDGEOT
 import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.PIKACHU
+import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.PIOLIN
 import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.PIPLUP
+import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.PLUTO
+import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.PORKY
 import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.PSYDUCK
 import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.SNORLAX
 import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.SQUIRTLE

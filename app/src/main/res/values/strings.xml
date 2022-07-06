@@ -14,4 +14,11 @@
     <string name="puntos">Puntos</string>
     <string name="texto_informacion">Texto información</string>
     <string name="game_over">GAME OVER</string>
+    <string name="espacio_blanco" />
+    <string name="cero">0s</string>
+    <string name="selecciona_personajes">Selecciona personajes</string>
+    <string name="version">Version: 2.2.1</string>
+    <string name="credits">Sounds from Zapsplat.com</string>
+    <string name="cargando">Cargando…</string>
+    <string name="iniciando">Iniciando...</string>
 </resources>

@@ -1,9 +1,11 @@
 package com.miguel_lm.memorygame.model.provider
 
 import android.content.Context
+import android.media.MediaPlayer
 import android.widget.ImageButton
 import com.miguel_lm.memorygame.R
 import com.miguel_lm.memorygame.databinding.ActivityGameBinding
+import com.miguel_lm.memorygame.model.timer.Timer
 
 
 class ChargeBoard {

@@ -2,6 +2,7 @@ package com.miguel_lm.memorygame.model.provider
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.media.MediaPlayer
 import android.os.Handler
 import android.os.Looper
 import android.widget.ImageButton
@@ -21,6 +22,7 @@ class ShowImagesOnGameBoard {
     private var hits = 0
     private var numCount = 0
     private var score = 0
+    private var mediaPlayer = MediaPlayerMusic().getInstance()
 
 
     fun showPicturesOnBoard(option: Int, board: Array<ImageButton?>,
@@ -45,7 +47,7 @@ class ShowImagesOnGameBoard {
         handler.postDelayed({
             for (i in boardLow.indices) {
                 boardLow[i]?.scaleType = ImageView.ScaleType.CENTER_CROP
-                boardLow[i]?.setImageResource(StaticVariables.BACKGROUND_ROW)
+                boardLow[i]?.setImageResource(BACKGROUND_ROW)
             }
         }, 500)
 
@@ -68,7 +70,7 @@ class ShowImagesOnGameBoard {
         handler.postDelayed({
             for (i in boardMedium.indices) {
                 boardMedium[i]?.scaleType = ImageView.ScaleType.CENTER_CROP
-                boardMedium[i]?.setImageResource(StaticVariables.BACKGROUND_ROW)
+                boardMedium[i]?.setImageResource(BACKGROUND_ROW)
             }
         }, 500)
 
@@ -91,7 +93,7 @@ class ShowImagesOnGameBoard {
         handler.postDelayed({
             for (i in boardHigh.indices) {
                 boardHigh[i]?.scaleType = ImageView.ScaleType.CENTER_CROP
-                boardHigh[i]?.setImageResource(StaticVariables.BACKGROUND_ROW)
+                boardHigh[i]?.setImageResource(BACKGROUND_ROW)
             }
         }, 500)
 
@@ -136,6 +138,7 @@ class ShowImagesOnGameBoard {
             binding.tvCounter.text = numCount.toString()
 
             if(numberFirst == numberSecond){
+                mediaPlayerInit(context)
                 first = null
                 blocking = false
                 hits++
@@ -143,20 +146,15 @@ class ShowImagesOnGameBoard {
                 binding.tvPairs.text = score.toString()
                 binding.tvCounter.text = numCount.toString()
 
-                if(hits == ImageList().chargeListImageLow().size) {
-                    DialogGameOver().showDialogGameOver(score, context)
-                    binding.tvTimer.text = "0s"
-                    blocking = true
-                    Toast.makeText(context,"Has ganado!!", Toast.LENGTH_SHORT).show()
-                }
+                getListImageBoard(selection, context, binding, option)
 
             } else {
                 handler.postDelayed({
                     first!!.scaleType = ImageView.ScaleType.CENTER_CROP
-                    first!!.setImageResource(StaticVariables.BACKGROUND_ROW)
+                    first!!.setImageResource(BACKGROUND_ROW)
                     first!!.isEnabled = true
                     imgb.scaleType = ImageView.ScaleType.CENTER_CROP
-                    imgb.setImageResource(StaticVariables.BACKGROUND_ROW)
+                    imgb.setImageResource(BACKGROUND_ROW)
                     imgb.isEnabled = true
                     blocking = false
                     first = null

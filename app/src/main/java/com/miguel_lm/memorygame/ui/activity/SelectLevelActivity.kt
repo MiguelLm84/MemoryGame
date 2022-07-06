@@ -19,12 +19,16 @@ class SelectLevelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySelectLevelBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         elementAnimation()
+        mediaPlayerInit()
+        spinnerSelection()
+        buttonEvents()
+        animTitle()
+    }
 
-        binding.cardViewLow.setOnClickListener { goToGameScreen(1) }
-        binding.cardViewMedium.setOnClickListener { goToGameScreen(2) }
-        binding.cardViewHigh.setOnClickListener { goToGameScreen(3) }
+    override fun onPause() {
+        super.onPause()
+        mediaPlayer?.stop()
     }
 
 
@@ -33,7 +37,9 @@ class SelectLevelActivity : AppCompatActivity() {
         val intent = Intent(this, GameActivity::class.java)
         intent.putExtra(EXTRA_SELECTION, selection)
         startActivity(intent)
+        finish()
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        mediaPlayer?.stop()
     }
 
     //Método para la animación del logo de la app y splash.

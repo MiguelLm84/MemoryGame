@@ -9,9 +9,17 @@ import android.widget.Button
 import android.widget.TextView
 import com.airbnb.lottie.LottieAnimationView
 import com.miguel_lm.memorygame.R
+import com.miguel_lm.memorygame.model.singleton.MediaPlayerMusic
+import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.MUSIC_LOOSE
+import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.MUSIC_WINNER
+import com.miguel_lm.memorygame.model.provider.StaticVariables.Companion.SOUND_LOOSER
 
 class DialogGameOver {
 
+    private var mediaPlayer = MediaPlayerMusic().getInstance()
+
+
+    //Method to show dialog at the end of the game
     @SuppressLint("SetTextI18n")
     fun showDialogGameOver(totalScore: Int, context: Context) {
 
